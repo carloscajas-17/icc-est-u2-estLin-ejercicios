@@ -51,18 +51,24 @@ public class LogicaClasificacion {
         Stack<Character> pila = new Stack<>();
         for ( int i=0; i< expresion.length();i++){
             char character = expresion.charAt(i);
-            if ( character == '(' ||
-             character == '{' || 
-             character =='['){
-                pila.push(character)
-             }else{
+            if ( character == '(' ||character == '{' || character =='['){
+                pila.push(character);
+            }else{
                 if (pila.isEmpty()){
                     return false;
                 }
 
+                char top = pila.pop();
+                if((character == ')' && top != '(') ||
+                (character == '}' && top != '{') ||
+                (character == ']' && top != '[')){
+                    return false;
+                }
 
-             }
+
+            }
         }
+        return pila.isEmpty();
 
     }
 
