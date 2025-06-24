@@ -1,6 +1,7 @@
 package main;
 
 import java.util.*;
+import java.util.Stack;
 
 public class LogicaClasificacion {
 
@@ -15,8 +16,25 @@ public class LogicaClasificacion {
      *         Salida: "odnuM aloH"
      */
     public String invertirCadena(String texto) {
-        return "";
+        Stack<Character> pila = new Stack<>(); // Crear luna pila de caracteres
+
+        for ( char c: texto.toCharArray()){
+            pila.push(c);
+
+        }// RECORRE LA CADEANA Y APILA CADA CARACTER
+
+        StringBuilder invertido = new StringBuilder();
+
+        while (!pila.empty()){
+            invertido.append(pila.pop());
+        }//ESTRA POPO LOS CARACTERES DE PILA Y COSTRUYE LA CADA INVERTIDA
+
+
+        return invertido.toString();
     }
+
+
+    
 
     /**
      * Verifica si los símbolos de paréntesis, corchetes y llaves están bien
@@ -30,7 +48,22 @@ public class LogicaClasificacion {
      *         Salida: true
      */
     public boolean validarSimbolos(String expresion) {
-        return false;
+        Stack<Character> pila = new Stack<>();
+        for ( int i=0; i< expresion.length();i++){
+            char character = expresion.charAt(i);
+            if ( character == '(' ||
+             character == '{' || 
+             character =='['){
+                pila.push(character)
+             }else{
+                if (pila.isEmpty()){
+                    return false;
+                }
+
+
+             }
+        }
+
     }
 
     /**
