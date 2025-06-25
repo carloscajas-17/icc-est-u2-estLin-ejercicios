@@ -1,7 +1,6 @@
 package main;
 
 import java.util.*;
-import java.util.Stack;
 
 public class LogicaClasificacion {
 
@@ -71,8 +70,7 @@ public class LogicaClasificacion {
         return pila.isEmpty();
 
     }
-
-   /**
+    /**
      * Ordena una pila de enteros en orden ascendente usando otra pila auxiliar.
      *
      * @return Lista ordenada.
