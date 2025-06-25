@@ -17,20 +17,15 @@ public class LogicaClasificacion {
      */
     public String invertirCadena(String texto) {
         Stack<Character> pila = new Stack<>();
-
         for (char c : texto.toCharArray()) {
             pila.push(c);
         }
-
         StringBuilder invertido = new StringBuilder();
-
-        while (!pila.isEmpty()) {
+         while (!pila.isEmpty()) {
             invertido.append(pila.pop());
         }
-
         return invertido.toString();
     }
-
     /**
      * Verifica si los símbolos de paréntesis, corchetes y llaves están bien
      * balanceados.
@@ -52,18 +47,16 @@ public class LogicaClasificacion {
                 if (pila.isEmpty()) {
                     return false;
                 }
-
                 char top = pila.pop();
                 if ((character == ')' && top != '(') ||
-                    (character == '}' && top != '{') ||
-                    (character == ']' && top != '[')) {
+                (character == '}' && top != '{') ||
+                (character == ']' && top != '[')) {
                     return false;
                 }
             }
         }
         return pila.isEmpty();
     }
-
     /**
      * Ordena una pila de enteros en orden ascendente usando otra pila auxiliar.
      *
@@ -76,7 +69,6 @@ public class LogicaClasificacion {
      */
     public List<Integer> ordenarPila(Stack<Integer> pila) {
         Stack<Integer> auxiliar = new Stack<>();
-
         while (!pila.isEmpty()) {
             int top = pila.pop();
             while (!auxiliar.isEmpty() && auxiliar.peek() > top) {
@@ -84,15 +76,12 @@ public class LogicaClasificacion {
             }
             auxiliar.push(top);
         }
-
         List<Integer> resultado = new ArrayList<>();
         while (!auxiliar.isEmpty()) {
             resultado.add(auxiliar.pop());
         }
-
         return resultado;
     }
-
     /**
      * Clasifica una lista de enteros separando pares e impares.
      * Usa LinkedList para mantener el orden de inserción.
@@ -115,7 +104,6 @@ public class LogicaClasificacion {
                 impar.add(numero);
             }
         }
-
         pares.addAll(impar);
         return pares;
     }
