@@ -85,7 +85,6 @@ public class LogicaClasificacion {
             resultado.add(auxiliar.pop());
         }
         
-
         return resultado;
     }
 
