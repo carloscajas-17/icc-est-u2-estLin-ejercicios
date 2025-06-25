@@ -72,7 +72,7 @@ public class LogicaClasificacion {
 
     }
 
-    /**
+   /**
      * Ordena una pila de enteros en orden ascendente usando otra pila auxiliar.
      *
      * @return Lista ordenada.
@@ -82,8 +82,22 @@ public class LogicaClasificacion {
      *         Salida: [1, 2, 3, 4]
      */
     public List<Integer> ordenarPila(Stack<Integer> pila) {
+        Stack<Integer> auxiliar = new Stack<>();
 
-        return new ArrayList<>();
+        while (!pila.isEmpty()){
+            int top =pila.pop();
+
+            while(!auxiliar.isEmpty() && auxiliar.peek() > top){
+                pila.push(auxiliar.pop());
+            }
+            auxiliar.push(top);
+        }
+        List<Integer> resultado = new ArrayList<>();
+        while( !auxiliar.isEmpty()){
+            resultado.add(auxiliar.pop());
+        }
+        return resultado;
+
     }
 
     /**
@@ -97,7 +111,18 @@ public class LogicaClasificacion {
      *         Salida: [2, 4, 6, 1, 3, 5]
      */
     public List<Integer> clasificarPorParidad(LinkedList<Integer> original) {
+        LinkedList<Integer> pares= new LinkedList<>();
+        LinkedList<Integer> impar = new LinkedList<>();
+        
+        for (Integer numero : original){
+            if ( numero % 2==0){
+                pares.add(numero);
+            }else{
+                impar.add(numero);
+            }
+        }
+        pares.addAll(impar);
 
-        return new ArrayList<>();
+        return pares;
     }
 }
