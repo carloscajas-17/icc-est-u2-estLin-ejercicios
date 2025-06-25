@@ -1,6 +1,7 @@
 package main;
 
 import java.util.*;
+import java.util.Stack;
 
 public class LogicaClasificacion {
 
@@ -31,10 +32,6 @@ public class LogicaClasificacion {
 
         return invertido.toString();
     }
-
-
-    
-
     /**
      * Verifica si los símbolos de paréntesis, corchetes y llaves están bien
      * balanceados.
@@ -64,7 +61,6 @@ public class LogicaClasificacion {
                     return false;
                 }
 
-
             }
         }
         return pila.isEmpty();
@@ -78,7 +74,7 @@ public class LogicaClasificacion {
      *         Ejemplo:
      *         Entrada: [3, 1, 4, 2]
      *         Salida: [1, 2, 3, 4]
-     */
+    */
     public List<Integer> ordenarPila(Stack<Integer> pila) {
         Stack<Integer> auxiliar = new Stack<>();
 
@@ -97,7 +93,6 @@ public class LogicaClasificacion {
         return resultado;
 
     }
-
     /**
      * Clasifica una lista de enteros separando pares e impares.
      * Usa LinkedList para mantener el orden de inserción.
@@ -107,7 +102,7 @@ public class LogicaClasificacion {
      *         Ejemplo:
      *         Entrada: [1, 2, 3, 4, 5, 6]
      *         Salida: [2, 4, 6, 1, 3, 5]
-     */
+    */
     public List<Integer> clasificarPorParidad(LinkedList<Integer> original) {
         LinkedList<Integer> pares= new LinkedList<>();
         LinkedList<Integer> impar = new LinkedList<>();
