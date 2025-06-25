@@ -24,6 +24,7 @@ public class LogicaClasificacion {
 
         StringBuilder invertido = new StringBuilder();
         
+        
         while (!pila.isEmpty()) {
             invertido.append(pila.pop());
         }
@@ -83,7 +84,7 @@ public class LogicaClasificacion {
         while (!auxiliar.isEmpty()) {
             resultado.add(auxiliar.pop());
         }
-        
+
         return resultado;
     }
 
