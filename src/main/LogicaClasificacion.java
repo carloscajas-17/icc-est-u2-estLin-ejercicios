@@ -17,11 +17,14 @@ public class LogicaClasificacion {
      */
     public String invertirCadena(String texto) {
         Stack<Character> pila = new Stack<>();
+
         for (char c : texto.toCharArray()) {
             pila.push(c);
         }
+
         StringBuilder invertido = new StringBuilder();
-         while (!pila.isEmpty()) {
+        
+        while (!pila.isEmpty()) {
             invertido.append(pila.pop());
         }
         return invertido.toString();
@@ -80,8 +83,10 @@ public class LogicaClasificacion {
         while (!auxiliar.isEmpty()) {
             resultado.add(auxiliar.pop());
         }
+        
         return resultado;
     }
+
     /**
      * Clasifica una lista de enteros separando pares e impares.
      * Usa LinkedList para mantener el orden de inserción.
@@ -104,6 +109,7 @@ public class LogicaClasificacion {
                 impar.add(numero);
             }
         }
+
         pares.addAll(impar);
         return pares;
     }
